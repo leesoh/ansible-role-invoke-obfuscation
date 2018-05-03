@@ -1,0 +1,25 @@
+---
+- name: Add Microsoft apt keys
+  become: true
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: Add Microsoft repository
+  become: true
+  get_url:
+    url: "https://packages.microsoft.com/config/ubuntu/{{ ansible_distribution_version }}/prod.list"
+    dest: /etc/apt/sources.list.d/microsoft.list
+
+- name: Update cache and install PowerShell
+  become: true
+  apt:
+    update_cache: yes
+    name: powershell
+
+- name: Clone Invoke-Obfuscation
+  become: true
+  git:
+    repo: https://github.com/danielbohannon/Invoke-Obfuscation.git
+    dest: "{{ inv-obs_git_location }}/Invoke-Obfuscation"
+    update: yess

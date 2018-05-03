@@ -1,0 +1,16 @@
+galaxy_info:
+  author: your name
+  description: your description
+  license: BSD3
+  min_ansible_version: 1.6
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+
+  galaxy_tags:
+    - pentest
+    - powershell
+
+dependencies:
+  - leesoh.git
