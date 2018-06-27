@@ -1,6 +1,6 @@
 galaxy_info:
-  author: your name
-  description: your description
+  author: liam somerville
+  description: Installs Invoke-Obfuscation and PowerShell for Linux.
   license: BSD3
   min_ansible_version: 1.6
   platforms:
